@@ -30,20 +30,25 @@ public class Ciphers
          {
             if (Character.isUpperCase(curr))
             {
+               // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 65 = ASCII code for 'A'
                asciiVal = asciiVal - 65;
+               // alphabetical index allows the addition of the key, while handling any overflow
                asciiVal = (asciiVal + k) % 26;
                c.append((char)asciiVal);
 
-
             } else if (Character.isLowerCase(curr))
             {
-
-            } else
-            {
+               // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 97 = ASCII code for 'a'
+               asciiVal = asciiVal - 97;
+               // alphabetical index allows the addition of the key, while handling any overflow
+               asciiVal = (asciiVal + k) % 26;
+               c.append((char) asciiVal);
+            } else {
+               System.err.println("Ciphers:caesar - Caesar cipher is considering a non-alphabetical character");
             }
          } else
          {
-
+            continue;
          }
       }
       return c.toString();
