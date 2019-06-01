@@ -33,7 +33,10 @@ public class Ciphers
                // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 65 = ASCII code for 'A'
                asciiVal = asciiVal - 65;
                // alphabetical index allows the addition of the key, while handling any overflow
-               asciiVal = (asciiVal + k) % 26;
+               asciiVal = Math.floorMod(asciiVal + k, 26);
+               // convert enciphered plaintext alphabetical index back to the ASCII character that index represents
+               asciiVal = asciiVal + 65;
+
                c.append((char)asciiVal);
 
             } else if (Character.isLowerCase(curr))
@@ -41,14 +44,18 @@ public class Ciphers
                // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 97 = ASCII code for 'a'
                asciiVal = asciiVal - 97;
                // alphabetical index allows the addition of the key, while handling any overflow
-               asciiVal = (asciiVal + k) % 26;
+               asciiVal =  Math.floorMod(asciiVal + k, 26);
+               // convert enciphered plaintext alphabetical index back to the ASCII character that index represents
+               asciiVal = asciiVal + 97;
+
                c.append((char) asciiVal);
             } else {
+
                System.err.println("Ciphers:caesar - Caesar cipher is considering a non-alphabetical character");
             }
          } else
          {
-            continue;
+            c.append(p.charAt(i));
          }
       }
       return c.toString();
