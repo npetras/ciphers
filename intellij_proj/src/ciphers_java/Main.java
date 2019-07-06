@@ -21,6 +21,7 @@ public class Main extends Application
 
    public static void main(String[] args)
    {
+      // make sure that caesar key is fully numerical and that vigenere key is fully alphabetical
       launch(args);
    }
 }

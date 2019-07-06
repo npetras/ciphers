@@ -22,4 +22,17 @@ public class Tests
       expected = "Olssv Dvysk! 123&*%";
       Assertions.assertEquals(expected, Ciphers.caesar(-45, p));
    }
+
+   @Test
+    void testVigenereCipher()
+   {
+       String p = "Hello World! 123&*%";
+
+       String expected = "Hfnlp Yosnd! 123&*%";
+       Assertions.assertEquals(expected, Ciphers.vigenere("abc", p));
+
+       String expected =
+
+
+   }
 }

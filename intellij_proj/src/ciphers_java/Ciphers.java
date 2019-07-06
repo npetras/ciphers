@@ -20,19 +20,20 @@ public class Ciphers
    public static String caesar(int k, String p)
    {
       int p_len = p.length();
-      StringBuilder c = new StringBuilder(p_len);
+      StringBuilder c = new StringBuilder(p_len);   // ciphertext
 
       for (int i = 0; i < p_len; i++)
       {
          char curr = p.charAt(i);
          int asciiVal = curr;
+
          if (Character.isLetter(curr))
          {
             if (Character.isUpperCase(curr))
             {
                // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 65 = ASCII code for 'A'
                asciiVal = asciiVal - 65;
-               // alphabetical index allows the addition of the key, while handling any overflow
+               // make the letter shift based on key, accounting for any overflow
                asciiVal = Math.floorMod(asciiVal + k, 26);
                // convert enciphered plaintext alphabetical index back to the ASCII character that index represents
                asciiVal = asciiVal + 65;
@@ -43,13 +44,14 @@ public class Ciphers
             {
                // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 97 = ASCII code for 'a'
                asciiVal = asciiVal - 97;
-               // alphabetical index allows the addition of the key, while handling any overflow
+               // make the letter shift based on key, accounting for any overflow
                asciiVal =  Math.floorMod(asciiVal + k, 26);
                // convert enciphered plaintext alphabetical index back to the ASCII character that index represents
                asciiVal = asciiVal + 97;
 
                c.append((char) asciiVal);
-            } else {
+            } else
+            {
 
                System.err.println("Ciphers:caesar - Caesar cipher is considering a non-alphabetical character");
             }
@@ -58,6 +60,53 @@ public class Ciphers
             c.append(p.charAt(i));
          }
       }
+      return c.toString();
+   }
+
+   public static String vigenere(String k, String p)
+   {
+       int p_len = p.length();
+       StringBuilder c = new StringBuilder(p_len);  // ciphertext
+
+      for (int i = 0; i < p_len; i++)
+      {
+          int keyIndex = i % k.length();    // makes sure key gets wrapped around properly
+
+          char currP = p.charAt(i);         // current plaintext character
+          char currK = k.charAt(keyIndex);  // current key character
+
+          int pAsciiVal = currP;            // plaintext ascii value
+          int kAsciiVal = currK;            // key ascii value
+
+          if (Character.isLetter(currP))
+          {
+              if (Character.isUpperCase(currP))
+              {
+                  // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 65 = ASCII code for 'A'
+                  pAsciiVal = pAsciiVal - 65;
+                  // turn alphabetic key into plaintext character - key will have to be purely alphabetic
+                  kAsciiVal = kAsciiVal - 65;
+                  // make the letter shift based on key, accounting for any overflow
+                  pAsciiVal =  Math.floorMod(pAsciiVal + kAsciiVal, 26);
+                  // convert enciphered plaintext alphabetical index back to the ASCII character that index represents
+                  pAsciiVal = pAsciiVal + 65;
+              } else if (Character.isLowerCase(currP))
+              {
+                  // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 97 = ASCII code for 'a'
+                  pAsciiVal = pAsciiVal - 65;
+                  // turn alphabetic key into plaintext character - key will have to be purely alphabetic
+                  kAsciiVal = kAsciiVal - 65;
+                  // make the letter shift based on key, accounting for any overflow
+                  pAsciiVal =  Math.floorMod(pAsciiVal + kAsciiVal, 26);
+                  // convert enciphered plaintext alphabetical index back to the ASCII character that index represents
+                  pAsciiVal = pAsciiVal + 65;
+              } else
+              {
+                  System.err.println("Ciphers:vigenere - Vigenere cipher is considering a non-alphabetical character");
+              }
+          }
+      }
+
       return c.toString();
    }
 }
