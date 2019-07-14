@@ -31,8 +31,5 @@ public class Tests
        String expected = "Hfnlp Yosnd! 123&*%";
        Assertions.assertEquals(expected, Ciphers.vigenere("abc", p));
 
-       String expected =
-
-
    }
 }
