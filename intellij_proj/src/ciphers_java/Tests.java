@@ -31,5 +31,11 @@ public class Tests
        String expected = "Hfnlp Yosnd! 123&*%";
        Assertions.assertEquals(expected, Ciphers.vigenere("abc", p));
 
+       expected = "Hfpcm Ohnjw! 123&*%";
+       Assertions.assertEquals(expected, Ciphers.vigenere("Aberystwyth", p) );
+
+       expected = "Oiwwc Ocjsh! 123&*%";
+       Assertions.assertEquals(expected, Ciphers.vigenere("HELLOSOS", p) );
+
    }
 }

@@ -149,7 +149,7 @@ public class Ciphers
               }
           } else
           {
-             keyIndex = keyIndex + 1;
+             c.append(currP);
           }
       }
       return c.toString();

@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Created vigenere cipher method, the method still needs adjustments and to be tested">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/intellij_proj/ciphers_java/Ciphers.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/intellij_proj/ciphers_java/Controller.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/intellij_proj/ciphers_java/Main.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/intellij_proj/ciphers_java/Tests.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/ciphers_java/Ciphers.java" afterPath="$PROJECT_DIR$/src/ciphers_java/Ciphers.java" />
       <change beforePath="$PROJECT_DIR$/src/ciphers_java/Tests.java" afterPath="$PROJECT_DIR$/src/ciphers_java/Tests.java" />
     </list>
@@ -70,9 +64,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ciphers_java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tests.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Tests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ciphers_java/Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="504">
+              <caret line="37" column="67" lean-forward="false" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ciphers.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ciphers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ciphers_java/Ciphers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="155" column="4" lean-forward="true" selection-start-line="155" selection-start-column="4" selection-end-line="156" selection-end-column="1" />
+            <state relative-caret-position="616">
+              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,8 +134,8 @@
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/ciphers_java/Controller.java" />
         <option value="$PROJECT_DIR$/src/ciphers_java/Main.java" />
-        <option value="$PROJECT_DIR$/src/ciphers_java/Tests.java" />
         <option value="$PROJECT_DIR$/src/ciphers_java/Ciphers.java" />
+        <option value="$PROJECT_DIR$/src/ciphers_java/Tests.java" />
       </list>
     </option>
   </component>
@@ -151,8 +147,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="492" />
-    <option name="y" value="101" />
+    <option name="x" value="200" />
+    <option name="y" value="36" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -431,7 +427,7 @@
       <workItem from="1559400266619" duration="2575000" />
       <workItem from="1562424637710" duration="902000" />
       <workItem from="1562425562423" duration="2820000" />
-      <workItem from="1563100637925" duration="1544000" />
+      <workItem from="1563100637925" duration="2704000" />
     </task>
     <task id="LOCAL-00001" summary="Created vigenere cipher method, the method still needs adjustments and to be tested">
       <created>1562430818614</created>
@@ -444,27 +440,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests_testCaesarCipher - 2019.06.01 at 16h 24m 13s.xml">
-      <configuration name="Tests.testCaesarCipher" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_testCaesarCipher - 2019.07.06 at 16h 27m 20s.xml">
-      <configuration name="Tests.testCaesarCipher" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 12h 46m 25s.xml">
-      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 12h 48m 07s.xml">
-      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 12h 53m 14s.xml">
-      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 12h 55m 16s.xml">
-      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 12h 55m 22s.xml">
-      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 12h 56m 53s.xml">
       <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
     </history-entry>
@@ -474,12 +449,34 @@
     <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 13h 00m 37s.xml">
       <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 13h 14m 09s.xml">
+      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 13h 14m 30s.xml">
+      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 13h 15m 02s.xml">
+      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 13h 16m 13s.xml">
+      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 13h 16m 40s.xml">
+      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 13h 21m 53s.xml">
+      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_testVigenereCipher - 2019.07.14 at 13h 22m 34s.xml">
+      <configuration name="Tests.testVigenereCipher" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14202000" />
+    <option name="totallyTimeSpent" value="15362000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -489,18 +486,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251073" sideWeight="0.50104386" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3325967" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35052082" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.70250523" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4044199" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -530,15 +527,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ciphers_java/Tests.java</url>
-          <line>31</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -551,7 +540,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="23" column="97" lean-forward="false" selection-start-line="23" selection-start-column="97" selection-end-line="23" selection-end-column="97" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -585,7 +576,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -617,7 +610,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -649,7 +644,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -671,7 +668,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -693,7 +692,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -704,11 +705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar!/org/junit/platform/commons/util/ReflectionUtils.class" />
-    <entry file="file://$PROJECT_DIR$/src/ciphers_java/Main.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        <state relative-caret-position="171">
+          <caret line="51" column="132" lean-forward="false" selection-start-line="51" selection-start-column="132" selection-end-line="51" selection-end-column="132" />
           <folding />
         </state>
       </provider>
@@ -721,10 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ciphers_java/Tests.java">
+    <entry file="file://$PROJECT_DIR$/src/ciphers_java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -733,9 +733,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ciphers_java/Ciphers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="155" column="4" lean-forward="true" selection-start-line="155" selection-start-column="4" selection-end-line="156" selection-end-column="1" />
+        <state relative-caret-position="616">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ciphers_java/Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="37" column="67" lean-forward="false" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
