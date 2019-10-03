@@ -1,3 +1,2 @@
-# ciphers-c
-Caesar and Vigenere ciphers in C.
-Has been moved to Java. See: https://github.com/npetras/ciphers-java
+# ciphers
+This is a ciphers project, which enciphers plain text into cipher text, using two different ciphers: caesar and vigenere.
