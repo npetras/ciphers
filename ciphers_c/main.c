@@ -12,22 +12,26 @@ int main( )
     char k[10];
 
 
-    printf("key: ");
-    scanf(" %s", k);
+//    printf("key: ");
+//    scanf(" %s", k);
+//
+//#ifdef DEBUG
+//    printf("key = %s\n", k);
+//#endif
+//
+//    printf("plaintext: ");
+//    scanf(" %s", p);
 
-#ifdef DEBUG
-    printf("key = %s\n", k);
-#endif
+//#ifdef DEBUG
+//    printf("plaintext = %s\n", p);
+//#endif
 
-    printf("plaintext: ");
-    scanf(" %s", p);
+    strcpy(k, "abc");
+    strcpy(p, "hello");
 
-#ifdef DEBUG
-    printf("plaintext = %s\n", p);
-#endif
 
     vigenere_cipher(k, p, c);
-    printf("ciphertext: %s", c);
+    printf("ciphertext: %s\n", c);
 
     return 0;
 }
