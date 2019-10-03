@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Volumes/Nicolas P/projects/ciphers_project/gitrepo/ciphers2/clion_proj/ciphers.c
+string.h
+-
+ctype.h
+-
+stdio.h
+-
+ciphers.h
+/Volumes/Nicolas P/projects/ciphers_project/gitrepo/ciphers2/clion_proj/ciphers.h
+
+/Volumes/Nicolas P/projects/ciphers_project/gitrepo/ciphers2/clion_proj/ciphers.h
+
+/Volumes/Nicolas P/projects/ciphers_project/gitrepo/ciphers2/clion_proj/main.c
+stdio.h
+-
+string.h
+-
+ciphers.h
+/Volumes/Nicolas P/projects/ciphers_project/gitrepo/ciphers2/clion_proj/ciphers.h
+
