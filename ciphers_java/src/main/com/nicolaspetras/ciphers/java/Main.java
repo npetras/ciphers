@@ -1,4 +1,4 @@
-package ciphers_java;
+package com.nicolaspetras.ciphers.java;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

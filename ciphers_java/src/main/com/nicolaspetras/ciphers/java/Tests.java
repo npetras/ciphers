@@ -1,4 +1,4 @@
-package ciphers_java;
+package com.nicolaspetras.ciphers.java;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
