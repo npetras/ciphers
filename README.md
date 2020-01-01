@@ -9,10 +9,10 @@ During this project I have created two programs, one in C and another in Java, t
 
 This project has let me explore the different approaches that you take when using different types of languages,
  with C being a functional language, and Java on the other hand is a object oriented language. I have tried to use each 
- language's strenghts and general syle when developing the two programs.
+ language's strengths and general style when developing the two programs.
 
 Future plans for the project:
-* Add unit tests to the C programg
+* Add unit tests to the C program
 * Complete the development of the Java program, including the JavaFX GUI
 * Add new features to one or both programs:
   * Deciphering component
