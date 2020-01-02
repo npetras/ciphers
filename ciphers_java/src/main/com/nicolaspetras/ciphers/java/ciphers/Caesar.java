@@ -36,9 +36,11 @@ public class Caesar extends Cipher
      * @return Enciphered plaintext (cipher text)
      * @throws UnexpectedNonAlphaCharException When a non-alphabetical character is evaluated at a point, where
      *                                         all characters should be alphabetical
+     * @throws InvalidAsciiValForAException When an invalid ASCII value for A/a is provided.
      */
     @Override
-    public String encipher(String plaintext) throws UnexpectedNonAlphaCharException
+    public String encipher(String plaintext) throws UnexpectedNonAlphaCharException,
+            InvalidAsciiValForAException
     {
         int p_len = plaintext.length();
         StringBuilder c = new StringBuilder(p_len);   // ciphertext
@@ -47,7 +49,7 @@ public class Caesar extends Cipher
         {
             char curr = plaintext.charAt(i);
 
-            // Only encipher letters (alphabetical characters)
+            // only encipher letters (alphabetical characters)
             if (Character.isLetter(curr))
             {
                 encipherChar(c, curr, (int) curr);
@@ -67,12 +69,11 @@ public class Caesar extends Cipher
      * @param ciphertext The current cipher text
      * @param curr       Current character being considered (that is a letter)
      * @param asciiVal   The ASCII value of the character currently being considered
-     * @throws UnexpectedNonAlphaCharException When a non-alphabetical character is evaluated at a point, where
-     *                                         all characters should be alphabetical
      */
-    private void encipherChar(StringBuilder ciphertext, char curr, int asciiVal) throws UnexpectedNonAlphaCharException
+    private void encipherChar(StringBuilder ciphertext, char curr, int asciiVal) throws UnexpectedNonAlphaCharException,
+            InvalidAsciiValForAException
     {
-        int encipheredAsciiVal = 0;
+        char encipheredAsciiVal = 'A';
         if (Character.isUpperCase(curr))
         {
             encipheredAsciiVal = applyCipher(asciiVal, UPPERCASE_A);
@@ -96,21 +97,21 @@ public class Caesar extends Cipher
      * @param asciiValOfA The ASCII value of a to be used - uppercase (65) or lowercase (97)
      * @return The enciphered character
      */
-    private char applyCipher(int asciiVal, int asciiValOfA)
+    private char applyCipher(int asciiVal, int asciiValOfA) throws InvalidAsciiValForAException
     {
         int encipheredAsciiVal = 0;  // enciphered ASCII value of 'asciiVal'
 
         if (asciiValOfA == 65 ^ asciiValOfA == 97)
         {
             // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 65 = ASCII code for 'A', and 97 = 'a'
-            encipheredAsciiVal = asciiVal - asciiValOfA;
+            int alphaIndex = asciiVal - asciiValOfA;
             // applies letter shift, accounting for overflow
-            encipheredAsciiVal = Math.floorMod(asciiVal + key, NUM_OF_LETTERS_IN_ALPHABET);
+            int encipheredAlphaIndex = Math.floorMod(alphaIndex + key, NUM_OF_LETTERS_IN_ALPHABET);
             // convert enciphered plaintext alphabetical index back to the ASCII character that index represents
-            encipheredAsciiVal = asciiVal + asciiValOfA;
+            encipheredAsciiVal = encipheredAlphaIndex + asciiValOfA;
         } else
         {
-            System.err.println("An invalid ascii code for a/A was provided");
+            throw new InvalidAsciiValForAException();
         }
 
         return (char) encipheredAsciiVal;

@@ -1,5 +1,10 @@
 package com.nicolaspetras.ciphers.java.ciphers;
 
+import org.apache.commons.lang3.StringUtils;
+
+/**
+ * Key is to be restricted to only alphabetical characters
+ */
 public class Vigenere extends Cipher
 {
     // instance variables
@@ -12,9 +17,9 @@ public class Vigenere extends Cipher
      *
      * @param key The cipher key
      */
-    public Vigenere(String key)
+    public Vigenere(String key) throws InvalidVigenereKeyException
     {
-        this.key = key;
+        setKey(key);
     }
 
     // getters/setters
@@ -23,9 +28,20 @@ public class Vigenere extends Cipher
         return key;
     }
 
-    public void setKey(String key)
+    /**
+     * Only alphabetical keys can be provided - no non-alphabetic characters are allowed in the 'key', such as
+     * spaces, numbers and special characters (e.g. #)
+     *
+     * @param key The new Vigenere cipher key
+     * @throws InvalidVigenereKeyException When an invalid key is provided - one with non-alphabetic characters
+     */
+    public void setKey(String key) throws InvalidVigenereKeyException
     {
-        this.key = key;
+        if (StringUtils.isAlpha(key)) {
+            this.key = key;
+        } else {
+            throw new InvalidVigenereKeyException();
+        }
     }
 
     // methods
