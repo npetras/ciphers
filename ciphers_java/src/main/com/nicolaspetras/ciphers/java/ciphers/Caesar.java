@@ -36,7 +36,7 @@ public class Caesar extends Cipher
      * @return Enciphered plaintext (cipher text)
      * @throws UnexpectedNonAlphaCharException When a non-alphabetical character is evaluated at a point, where
      *                                         all characters should be alphabetical
-     * @throws InvalidAsciiValForAException When an invalid ASCII value for A/a is provided.
+     * @throws InvalidAsciiValForAException    When an invalid ASCII value for A/a is provided.
      */
     @Override
     public String encipher(String plaintext) throws UnexpectedNonAlphaCharException,
@@ -73,7 +73,7 @@ public class Caesar extends Cipher
     private void encipherChar(StringBuilder ciphertext, char curr, int asciiVal) throws UnexpectedNonAlphaCharException,
             InvalidAsciiValForAException
     {
-        char encipheredAsciiVal = 'A';
+        char encipheredAsciiVal;
         if (Character.isUpperCase(curr))
         {
             encipheredAsciiVal = applyCipher(asciiVal, UPPERCASE_A);
@@ -99,7 +99,7 @@ public class Caesar extends Cipher
      */
     private char applyCipher(int asciiVal, int asciiValOfA) throws InvalidAsciiValForAException
     {
-        int encipheredAsciiVal = 0;  // enciphered ASCII value of 'asciiVal'
+        int encipheredAsciiVal;  // enciphered ASCII value of 'asciiVal'
 
         if (asciiValOfA == 65 ^ asciiValOfA == 97)
         {
