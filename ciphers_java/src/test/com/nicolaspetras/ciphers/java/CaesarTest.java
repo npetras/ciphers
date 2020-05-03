@@ -2,6 +2,7 @@ package com.nicolaspetras.ciphers.java;
 
 import com.nicolaspetras.ciphers.java.ciphers.Caesar;
 import com.nicolaspetras.ciphers.java.ciphers.InvalidAsciiValForAException;
+import com.nicolaspetras.ciphers.java.ciphers.InvalidCipherKeyException;
 import com.nicolaspetras.ciphers.java.ciphers.UnexpectedNonAlphaCharException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -31,7 +32,7 @@ public class CaesarTest
             "-45, Olssv Dvysk! 123&*%"
     })
     public void testEncipher(int key, String expected) throws UnexpectedNonAlphaCharException,
-            InvalidAsciiValForAException
+            InvalidAsciiValForAException, InvalidCipherKeyException
     {
         Caesar caesar = new Caesar(key);
         String plaintext = "Hello World! 123&*%";

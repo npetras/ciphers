@@ -1,7 +1,7 @@
 package com.nicolaspetras.ciphers.java;
 
 import com.nicolaspetras.ciphers.java.ciphers.InvalidAsciiValForAException;
-import com.nicolaspetras.ciphers.java.ciphers.InvalidVigenereKeyException;
+import com.nicolaspetras.ciphers.java.ciphers.InvalidCipherKeyException;
 import com.nicolaspetras.ciphers.java.ciphers.UnexpectedNonAlphaCharException;
 import com.nicolaspetras.ciphers.java.ciphers.Vigenere;
 import org.junit.jupiter.api.Assertions;
@@ -23,7 +23,7 @@ public class VigenereTest
             "HELLOSOS, Oiwwc Ocjsh! 123&*%"
     })
     public void testEncipher(String key, String expected) throws UnexpectedNonAlphaCharException,
-            InvalidAsciiValForAException, InvalidVigenereKeyException
+            InvalidAsciiValForAException, InvalidCipherKeyException
     {
         Vigenere vigenere = new Vigenere(key);
         String plaintext = "Hello World! 123&*%";
