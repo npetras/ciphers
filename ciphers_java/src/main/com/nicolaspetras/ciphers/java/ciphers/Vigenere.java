@@ -17,7 +17,7 @@ public class Vigenere extends Cipher
      *
      * @param key The cipher key
      */
-    public Vigenere(String key) throws InvalidVigenereKeyException
+    public Vigenere(String key) throws InvalidCipherKeyException
     {
         setKey(key);
     }
@@ -33,14 +33,14 @@ public class Vigenere extends Cipher
      * spaces, numbers and special characters (e.g. #)
      *
      * @param key The new Vigenere cipher key
-     * @throws InvalidVigenereKeyException When an invalid key is provided - one with non-alphabetic characters
+     * @throws InvalidCipherKeyException When an invalid key is provided - one with non-alphabetic characters
      */
-    public void setKey(String key) throws InvalidVigenereKeyException
+    public void setKey(String key) throws InvalidCipherKeyException
     {
         if (StringUtils.isAlpha(key)) {
             this.key = key;
         } else {
-            throw new InvalidVigenereKeyException();
+            throw new InvalidCipherKeyException();
         }
     }
 

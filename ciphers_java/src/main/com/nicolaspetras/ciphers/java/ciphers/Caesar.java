@@ -10,9 +10,9 @@ public class Caesar extends Cipher
     private int key;
 
     // constructors
-    public Caesar(int key)
+    public Caesar(int key) throws InvalidCipherKeyException
     {
-        this.key = key;
+        setKey(key);
     }
 
     // getters/setters
@@ -21,8 +21,13 @@ public class Caesar extends Cipher
         return key;
     }
 
-    public void setKey(int key)
+    public void setKey(int key) throws InvalidCipherKeyException
     {
+        if ((key >= -25) && (key <= 25)) {
+            this.key = key;
+        } else {
+            throw new InvalidCipherKeyException();
+        }
         this.key = key;
     }
 
