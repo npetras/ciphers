@@ -3,7 +3,9 @@ package com.nicolaspetras.ciphers.java.ciphers;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Key is to be restricted to only alphabetical characters
+ * An implementation of the Vigenere cipher, that enciphers text (plaintext) into ciphertext using the Vigenere cipher
+ * method.
+ * <p>The key is a String made up of only alphabetical characters.
  */
 public class Vigenere extends Cipher
 {
@@ -46,11 +48,13 @@ public class Vigenere extends Cipher
 
     // methods
     /**
+     * Enciphers <code>plaintext</code> using the Vigenere cipher technique using the <code>key</code>.
+     * <p>The <code>key</code> determines the letter shifts over the plaintext.
      *
-     *
-     * @param plaintext
-     * @return
-     * @throws UnexpectedNonAlphaCharException
+     * @param plaintext The plaintext to be enciphered
+     * @return The ciphertext - enciphered plaintext using the <code>key</code>
+     * @throws UnexpectedNonAlphaCharException When non-alpha character (non-letter) was considered, when it should not
+     * have been.
      * @throws InvalidAsciiValForAException
      */
     @Override
@@ -80,6 +84,18 @@ public class Vigenere extends Cipher
         return ciphertext.toString();
     }
 
+    /**
+     * Enciphers a single plaintext character into a ciphertext character.
+     *
+     * @param ciphertext The current state of the ciphertext - contains all enciphered plaintext characters
+     * @param currP The current letter (character) being considered in the plaintext.
+     * @param currK The current letter (character) being considered in the key.
+     * @param pAsciiVal The ASCII value of <code>currP</code>
+     * @param kAsciiVal The ASCII value of <code>currK</code>
+     * @throws UnexpectedNonAlphaCharException When non-alpha character (non-letter) was considered, when it should not
+     * have been.
+     * @throws InvalidAsciiValForAException
+     */
     private void encipherChar(StringBuilder ciphertext, char currP, char currK, int pAsciiVal, int kAsciiVal)
             throws UnexpectedNonAlphaCharException, InvalidAsciiValForAException
     {

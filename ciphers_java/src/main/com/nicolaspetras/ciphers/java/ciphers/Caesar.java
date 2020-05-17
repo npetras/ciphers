@@ -34,8 +34,12 @@ public class Caesar extends Cipher
     // methods
 
     /**
-     * This function applies the Caesar cipher on the 'plaintext' using the 'key' instance variable.
-     * <p>The key determines the letter shift to be applied to the 'plaintext' to produce the cipher text.
+     * This function applies the Caesar cipher on the <code>plaintext</code> using the <code>key</code> instance
+     * variable.
+     * <p>The <code>key</code> determines the letter shift to be applied to the <code>plaintext</code> to produce
+     * the cipher text.
+     * <p>Negative <code>key</code>s cause a left shift, while positive <code>key</code>s cause a right shift of the
+     * plaintext.
      *
      * @param plaintext The plain text to be encoded
      * @return Enciphered plaintext (cipher text)
@@ -67,18 +71,19 @@ public class Caesar extends Cipher
     }
 
     /**
-     * Enciphers and then appends the enciphered letter 'curr' to the 'ciphertext'.
+     * Enciphers and then appends the enciphered letter <code>curr</code> to the <code>ciphertext</code>.
      * <p>The case of the letter changes the enciphering process - because the ASCII code of the character is used for
      * enciphering - the alphabetic index of the character is obtained first, and then the letter shift is applied.
      *
-     * @param ciphertext The current cipher text
-     * @param curr       Current character being considered (that is a letter)
+     * @param ciphertext The current cipher text - contains all characters that have already been enciphered
+     * @param curr       Current character (letter) being considered
      * @param asciiVal   The ASCII value of the character currently being considered
      */
     private void encipherChar(StringBuilder ciphertext, char curr, int asciiVal) throws UnexpectedNonAlphaCharException,
             InvalidAsciiValForAException
     {
         char encipheredAsciiVal;
+
         if (Character.isUpperCase(curr))
         {
             encipheredAsciiVal = applyCipher(asciiVal, UPPERCASE_A);
@@ -93,7 +98,7 @@ public class Caesar extends Cipher
     }
 
     /**
-     * Returns the enciphered character that had the ASCII value 'asciiVal' in the plaintext..
+     * Returns the enciphered character that had the ASCII value <code>asciiVal</code> in the plaintext.
      * <p>To encipher a character, first the alphabetic index of that character needs to be calculated, this is done by
      * subtracting the ASCII value for uppercase a (A = 65) or lowercase (a = 97) depending on the case of the character
      * being evaluated. Then the letter shift is applied, which depends on the value of the 'key' instance variable.
