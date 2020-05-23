@@ -1,4 +1,4 @@
-package com.nicolaspetras.ciphers.java.ciphers;
+package com.nicolaspetras.ciphers.java.ciphers.exceptions;
 
 /**
  *

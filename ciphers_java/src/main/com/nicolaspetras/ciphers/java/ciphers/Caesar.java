@@ -1,5 +1,9 @@
 package com.nicolaspetras.ciphers.java.ciphers;
 
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidAsciiValForAException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidCipherKeyException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.UnexpectedNonAlphaCharException;
+
 /**
  * An implementation of the Caesar cipher, which uses a numerical key that determines the letter shift applied to the
  * plaintext and thus produced an piece of Caesar cipher cipher text.

@@ -1,5 +1,8 @@
 package com.nicolaspetras.ciphers.java.ciphers;
 
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidAsciiValForAException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidCipherKeyException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.UnexpectedNonAlphaCharException;
 import org.apache.commons.lang3.StringUtils;
 
 /**

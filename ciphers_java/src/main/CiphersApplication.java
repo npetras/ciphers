@@ -1,4 +1,6 @@
 import com.nicolaspetras.ciphers.java.ciphers.*;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidCipherKeyException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.UnknownCipherType;
 
 import java.util.Scanner;
 

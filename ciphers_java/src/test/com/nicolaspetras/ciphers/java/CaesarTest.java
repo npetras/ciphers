@@ -1,9 +1,9 @@
 package com.nicolaspetras.ciphers.java;
 
 import com.nicolaspetras.ciphers.java.ciphers.Caesar;
-import com.nicolaspetras.ciphers.java.ciphers.InvalidAsciiValForAException;
-import com.nicolaspetras.ciphers.java.ciphers.InvalidCipherKeyException;
-import com.nicolaspetras.ciphers.java.ciphers.UnexpectedNonAlphaCharException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidAsciiValForAException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidCipherKeyException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.UnexpectedNonAlphaCharException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

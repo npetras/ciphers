@@ -1,8 +1,8 @@
 package com.nicolaspetras.ciphers.java;
 
-import com.nicolaspetras.ciphers.java.ciphers.InvalidAsciiValForAException;
-import com.nicolaspetras.ciphers.java.ciphers.InvalidCipherKeyException;
-import com.nicolaspetras.ciphers.java.ciphers.UnexpectedNonAlphaCharException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidAsciiValForAException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidCipherKeyException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.UnexpectedNonAlphaCharException;
 import com.nicolaspetras.ciphers.java.ciphers.Vigenere;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;

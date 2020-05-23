@@ -1,5 +1,8 @@
 package com.nicolaspetras.ciphers.java.ciphers;
 
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.InvalidAsciiValForAException;
+import com.nicolaspetras.ciphers.java.ciphers.exceptions.UnexpectedNonAlphaCharException;
+
 /**
  * Defines a basic common class from which all ciphers can inherit.
  * <p>Defines some constant values, and the main method every Cipher class should have, which is an encipher method.
