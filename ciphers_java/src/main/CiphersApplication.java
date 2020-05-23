@@ -15,7 +15,9 @@ public class CiphersApplication {
 
 
     /**
-     * @param args
+     * Starts up the application, and provides a command line interface to the user.
+     *
+     * @param args Command line arguments
      */
     public static void main(String[] args) throws UnknownCipherType {
 
@@ -43,22 +45,18 @@ public class CiphersApplication {
                 useCaesarCipher(plainText);
                 break;
             case "v":
-                userVigenereCipher(plainText);
+                useVigenereCipher(plainText);
                 break;
             default:
                 throw new UnknownCipherType("An Unknown Cipher type " + cipherType + " was provided");
         }
     }
 
-    private static void userVigenereCipher(String plainText) {
-        String message = "Please provide a string Vigenere cipher key - the key should only contain \n" +
-                "alphabetic characters (letters), it should not contain numbers or other " +
-                "non-alphabetic characters:";
-        String vigenereCipherKey = getStringInputFromUser(message);
-        setVigenereKey(vigenereCipherKey);
-        encipherUsingVigenere(plainText, vigenereCipherKey);
-    }
-
+    /**
+     * Enciphers the plaintext using the Caesar cipher, as well as providing the Caesar specific CLI interface.
+     *
+     * @param plainText The plaintext the user provided
+     */
     private static void useCaesarCipher(String plainText) {
         String message = "Please provide a number Caesar cipher key (number between -25 and 25)";
         int caesarCipherKey;
@@ -79,6 +77,54 @@ public class CiphersApplication {
         encipherUsingCaesar(plainText, caesarCipherKey);
     }
 
+    /**
+     * Returns the int that the user provided when prompted with the <code>message</code>
+     * <p>Current usage is only to get the Caesar key from the user.
+     *
+     * @param message The message prompt to provoide the user
+     * @return The int the user provided, following the prompt
+     */
+    private static int getIntInputFromUser(String message) {
+        System.out.println(message);
+        // TODO: Catch Exceptions for Invalid Input
+        return scan.nextInt();
+    }
+
+
+    /**
+     * Enciphers the plaintext using the Vigenere cipher, as well as providing the Vigenere specific CLI interface.
+     *
+     * @param plainText The plaintext the user provided
+     */
+    private static void useVigenereCipher(String plainText) {
+        String message = "Please provide a string Vigenere cipher key - the key should only contain \n" +
+                "alphabetic characters (letters), it should not contain numbers or other " +
+                "non-alphabetic characters:";
+        String vigenereCipherKey = getStringInputFromUser(message);
+        setVigenereKey(vigenereCipherKey);
+        encipherUsingVigenere(plainText, vigenereCipherKey);
+    }
+
+
+    /**
+     * Prints a message prompt to the user and then receives String input from the user.
+     *
+     * @param message The message to be printed to the user, as a prompt for the data they should provide.
+     * @return The String input received from the user.
+     */
+    private static String getStringInputFromUser(String message) {
+        System.out.println(message);
+        // TODO: Catch Exceptions for Invalid Input
+        // TODO: Ensure all characters are alphabetic and spaces
+        return scan.nextLine();
+    }
+
+    /**
+     * Enciphers the plaintext using the Caesar cipher algorithm and key
+     *
+     * @param plainText The plaintext the user provided
+     * @param caesarCipherKey The Caesar cipher key the user provided
+     */
     private static void encipherUsingCaesar(String plainText, int caesarCipherKey) {
         try {
             String caesarCipherText = caesar.encipher(plainText);
@@ -93,19 +139,13 @@ public class CiphersApplication {
         }
     }
 
-    private static int getIntInputFromUser(String message) {
-        System.out.println(message);
-        return scan.nextInt();
-    }
 
-    private static void setVigenereKey(String vigenereCipherKey) {
-        try {
-            vigenere = new Vigenere(vigenereCipherKey);
-        } catch (InvalidCipherKeyException ex) {
-            // ask for another key
-        }
-    }
-
+    /**
+     * Enciphers the plaintext using the Vigenere cipher algorithm and key
+     *
+     * @param plainText The plaintext the user provided
+     * @param vigenereCipherKey The Vigenere cipher key the user provided
+     */
     private static void encipherUsingVigenere(String plainText, String vigenereCipherKey) {
         try {
             String vigenereCipherText = vigenere.encipher(plainText);
@@ -120,14 +160,15 @@ public class CiphersApplication {
     }
 
     /**
-     * Prints a message prompt to the user and then receives String input from the user.
      *
-     * @param message The message to be printed to the user, as a prompt for the data they should provide.
-     * @return The String input received from the user.
+     * @param vigenereCipherKey
      */
-    private static String getStringInputFromUser(String message) {
-        System.out.println(message);
-        return scan.nextLine();
+    private static void setVigenereKey(String vigenereCipherKey) {
+        try {
+            vigenere = new Vigenere(vigenereCipherKey);
+        } catch (InvalidCipherKeyException ex) {
+            // ask for another key
+        }
     }
 
     /**
