@@ -38,7 +38,7 @@ public class Vigenere extends Cipher {
      * @throws InvalidCipherKeyException When an invalid key is provided - one with non-alphabetic characters
      */
     public void setKey(String key) throws InvalidCipherKeyException {
-        if (StringUtils.isAlpha(key)) {
+        if (StringUtils.isAlphaSpace(key)) {
             this.key = key;
         } else {
             throw new InvalidCipherKeyException();
