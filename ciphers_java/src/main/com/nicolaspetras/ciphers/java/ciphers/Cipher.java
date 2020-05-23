@@ -7,8 +7,7 @@ import com.nicolaspetras.ciphers.java.ciphers.exceptions.UnexpectedNonAlphaCharE
  * Defines a basic common class from which all ciphers can inherit.
  * <p>Defines some constant values, and the main method every Cipher class should have, which is an encipher method.
  */
-public abstract class Cipher
-{
+public abstract class Cipher {
     // constants
     /**
      * Number of letters in the alphabet

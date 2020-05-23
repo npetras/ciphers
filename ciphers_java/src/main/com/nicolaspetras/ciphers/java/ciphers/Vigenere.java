@@ -10,8 +10,7 @@ import org.apache.commons.lang3.StringUtils;
  * method.
  * <p>The key is a String made up of only alphabetical characters.
  */
-public class Vigenere extends Cipher
-{
+public class Vigenere extends Cipher {
     // instance variables
     private String key;
 
@@ -22,14 +21,12 @@ public class Vigenere extends Cipher
      *
      * @param key The cipher key
      */
-    public Vigenere(String key) throws InvalidCipherKeyException
-    {
+    public Vigenere(String key) throws InvalidCipherKeyException {
         setKey(key);
     }
 
     // getters/setters
-    public String getKey()
-    {
+    public String getKey() {
         return key;
     }
 
@@ -40,8 +37,7 @@ public class Vigenere extends Cipher
      * @param key The new Vigenere cipher key
      * @throws InvalidCipherKeyException When an invalid key is provided - one with non-alphabetic characters
      */
-    public void setKey(String key) throws InvalidCipherKeyException
-    {
+    public void setKey(String key) throws InvalidCipherKeyException {
         if (StringUtils.isAlpha(key)) {
             this.key = key;
         } else {
@@ -50,6 +46,7 @@ public class Vigenere extends Cipher
     }
 
     // methods
+
     /**
      * Enciphers <code>plaintext</code> using the Vigenere cipher technique using the <code>key</code>.
      * <p>The <code>key</code> determines the letter shifts over the plaintext.
@@ -57,30 +54,26 @@ public class Vigenere extends Cipher
      * @param plaintext The plaintext to be enciphered
      * @return The ciphertext - enciphered plaintext using the <code>key</code>
      * @throws UnexpectedNonAlphaCharException When non-alpha character (non-letter) was considered, when it should not
-     * have been.
+     *                                         have been.
      * @throws InvalidAsciiValForAException
      */
     @Override
-    public String encipher(String plaintext) throws UnexpectedNonAlphaCharException, InvalidAsciiValForAException
-    {
+    public String encipher(String plaintext) throws UnexpectedNonAlphaCharException, InvalidAsciiValForAException {
         int p_len = plaintext.length();
         StringBuilder ciphertext = new StringBuilder(p_len);  // ciphertext
         int keyIndex = 0;
 
-        for (int i = 0; i < p_len; i++)
-        {
+        for (int i = 0; i < p_len; i++) {
             keyIndex = keyIndex % key.length();     // makes sure key gets wrapped around properly
             char currP = plaintext.charAt(i);       // current plaintext char
             char currK = key.charAt(keyIndex);      // current key char
             int pAsciiVal = currP;                  // ascii value of plaintext char
             int kAsciiVal = currK;                  //  ascii value of key char
 
-            if (Character.isLetter(currP))
-            {
+            if (Character.isLetter(currP)) {
                 encipherChar(ciphertext, currP, currK, pAsciiVal, kAsciiVal);
                 keyIndex = keyIndex + 1;
-            } else
-            {
+            } else {
                 ciphertext.append(currP);
             }
         }
@@ -91,35 +84,29 @@ public class Vigenere extends Cipher
      * Enciphers a single plaintext character into a ciphertext character.
      *
      * @param ciphertext The current state of the ciphertext - contains all enciphered plaintext characters
-     * @param currP The current letter (character) being considered in the plaintext.
-     * @param currK The current letter (character) being considered in the key.
-     * @param pAsciiVal The ASCII value of <code>currP</code>
-     * @param kAsciiVal The ASCII value of <code>currK</code>
+     * @param currP      The current letter (character) being considered in the plaintext.
+     * @param currK      The current letter (character) being considered in the key.
+     * @param pAsciiVal  The ASCII value of <code>currP</code>
+     * @param kAsciiVal  The ASCII value of <code>currK</code>
      * @throws UnexpectedNonAlphaCharException When non-alpha character (non-letter) was considered, when it should not
-     * have been.
+     *                                         have been.
      * @throws InvalidAsciiValForAException
      */
     private void encipherChar(StringBuilder ciphertext, char currP, char currK, int pAsciiVal, int kAsciiVal)
-            throws UnexpectedNonAlphaCharException, InvalidAsciiValForAException
-    {
-        if (Character.isUpperCase(currP) && Character.isUpperCase(currK))
-        {
+            throws UnexpectedNonAlphaCharException, InvalidAsciiValForAException {
+        if (Character.isUpperCase(currP) && Character.isUpperCase(currK)) {
             char encipheredChar = applyCipher(pAsciiVal, kAsciiVal, UPPERCASE_A, UPPERCASE_A);
             ciphertext.append(encipheredChar);
-        } else if (Character.isUpperCase(currP) && Character.isLowerCase(currK))
-        {
+        } else if (Character.isUpperCase(currP) && Character.isLowerCase(currK)) {
             char encipheredChar = applyCipher(pAsciiVal, kAsciiVal, UPPERCASE_A, LOWERCASE_A);
             ciphertext.append(encipheredChar);
-        } else if (Character.isLowerCase(currP) && Character.isUpperCase(currK))
-        {
+        } else if (Character.isLowerCase(currP) && Character.isUpperCase(currK)) {
             char encipheredChar = applyCipher(pAsciiVal, kAsciiVal, LOWERCASE_A, UPPERCASE_A);
             ciphertext.append(encipheredChar);
-        } else if (Character.isLowerCase(currP) && Character.isLowerCase(currK))
-        {
+        } else if (Character.isLowerCase(currP) && Character.isLowerCase(currK)) {
             char encipheredChar = applyCipher(pAsciiVal, kAsciiVal, LOWERCASE_A, LOWERCASE_A);
             ciphertext.append(encipheredChar);
-        } else
-        {
+        } else {
             throw new UnexpectedNonAlphaCharException();
         }
     }
@@ -138,12 +125,10 @@ public class Vigenere extends Cipher
      * @return The enciphered character
      */
     private char applyCipher(int pAsciiVal, int kAsciiVal, int asciiValOfAForP, int asciiValOfAForK)
-            throws InvalidAsciiValForAException
-    {
+            throws InvalidAsciiValForAException {
         int encipheredAsciiValP = 0;
 
-        if ((asciiValOfAForK == 65 ^ asciiValOfAForK == 97) && (asciiValOfAForP == 65 ^ asciiValOfAForP == 97))
-        {
+        if ((asciiValOfAForK == 65 ^ asciiValOfAForK == 97) && (asciiValOfAForP == 65 ^ asciiValOfAForP == 97)) {
             // get the alphabetical index of both the plain text and the key
             int alphaIndexP = pAsciiVal - asciiValOfAForP;
             int alphaIndexK = kAsciiVal - asciiValOfAForK;
@@ -152,8 +137,7 @@ public class Vigenere extends Cipher
             int encipheredAlphaIndexP = Math.floorMod(alphaIndexP + alphaIndexK, NUM_OF_LETTERS_IN_ALPHABET);
             // convert the enciphered alpha-index character to its ASCII value
             encipheredAsciiValP = encipheredAlphaIndexP + asciiValOfAForP;
-        } else
-        {
+        } else {
             throw new InvalidAsciiValForAException();
         }
 

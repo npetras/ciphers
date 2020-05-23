@@ -8,20 +8,16 @@ import java.util.Scanner;
  * Main application class.
  * <p>Responsible for initialising the command line interface, handling and appropriately responding to user input.
  */
-public class CiphersApplication
-{
+public class CiphersApplication {
     private static Scanner scan = new Scanner(System.in);
     private static Caesar caesar;
     private static Vigenere vigenere;
 
 
     /**
-     *
-     *
      * @param args
      */
-    public static void main(String[] args) throws UnknownCipherType
-    {
+    public static void main(String[] args) throws UnknownCipherType {
 
         printWelcomeMessage();
         String plainText = getStringInputFromUser("Please provide the plain text you want to encipher: ");
@@ -32,13 +28,13 @@ public class CiphersApplication
 
         // NOTE: could become a method returning a generic
         // make sure the input was valid
-         while(!cipherType.equals("c") && !cipherType.equals("v")) {
-             System.out.println("The value " + cipherType + " is not valid.");
-             cipherType = getStringInputFromUser("Please provide a valid value of 'c' or 'v' for the type of cipher you would" +
-                     " like to use");
-             cipherType = cipherType.trim();
-             cipherType = cipherType.toLowerCase();
-         }
+        while (!cipherType.equals("c") && !cipherType.equals("v")) {
+            System.out.println("The value " + cipherType + " is not valid.");
+            cipherType = getStringInputFromUser("Please provide a valid value of 'c' or 'v' for the type of cipher you would" +
+                    " like to use");
+            cipherType = cipherType.trim();
+            cipherType = cipherType.toLowerCase();
+        }
 
         String cipherText;
 
@@ -54,8 +50,7 @@ public class CiphersApplication
         }
     }
 
-    private static void userVigenereCipher(String plainText)
-    {
+    private static void userVigenereCipher(String plainText) {
         String message = "Please provide a string Vigenere cipher key - the key should only contain \n" +
                 "alphabetic characters (letters), it should not contain numbers or other " +
                 "non-alphabetic characters:";
@@ -64,14 +59,12 @@ public class CiphersApplication
         encipherUsingVigenere(plainText, vigenereCipherKey);
     }
 
-    private static void useCaesarCipher(String plainText)
-    {
+    private static void useCaesarCipher(String plainText) {
         String message = "Please provide a number Caesar cipher key (number between -25 and 25)";
         int caesarCipherKey;
         boolean validKey;
 
-        do
-        {
+        do {
             caesarCipherKey = getIntInputFromUser(message);
             validKey = true;
             try {
@@ -81,15 +74,13 @@ public class CiphersApplication
                 // print error
                 validKey = false;
             }
-        } while(!validKey);
+        } while (!validKey);
 
         encipherUsingCaesar(plainText, caesarCipherKey);
     }
 
-    private static void encipherUsingCaesar(String plainText, int caesarCipherKey)
-    {
-        try
-        {
+    private static void encipherUsingCaesar(String plainText, int caesarCipherKey) {
+        try {
             String caesarCipherText = caesar.encipher(plainText);
             System.out.println("Resulting ciphertext: ");
             System.out.println(caesarCipherText);
@@ -102,14 +93,12 @@ public class CiphersApplication
         }
     }
 
-    private static int getIntInputFromUser(String message)
-    {
+    private static int getIntInputFromUser(String message) {
         System.out.println(message);
         return scan.nextInt();
     }
 
-    private static void setVigenereKey(String vigenereCipherKey)
-    {
+    private static void setVigenereKey(String vigenereCipherKey) {
         try {
             vigenere = new Vigenere(vigenereCipherKey);
         } catch (InvalidCipherKeyException ex) {
@@ -117,10 +106,8 @@ public class CiphersApplication
         }
     }
 
-    private static void encipherUsingVigenere(String plainText, String vigenereCipherKey)
-    {
-        try
-        {
+    private static void encipherUsingVigenere(String plainText, String vigenereCipherKey) {
+        try {
             String vigenereCipherText = vigenere.encipher(plainText);
             System.out.println("Resulting ciphertext: ");
             System.out.println(vigenereCipherText);
@@ -138,8 +125,7 @@ public class CiphersApplication
      * @param message The message to be printed to the user, as a prompt for the data they should provide.
      * @return The String input received from the user.
      */
-    private static String getStringInputFromUser(String message)
-    {
+    private static String getStringInputFromUser(String message) {
         System.out.println(message);
         return scan.nextLine();
     }
@@ -147,8 +133,7 @@ public class CiphersApplication
     /**
      * Prints the welcome message for the application to the user.
      */
-    private static void printWelcomeMessage()
-    {
+    private static void printWelcomeMessage() {
         System.out.println("----------------------------- Ciphers -----------------------------");
         System.out.println("This application allows you to encipher any piece of text ");
         System.out.println("(plain text), using one of two ciphers: Caesar or Vigenere");

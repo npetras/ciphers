@@ -8,25 +8,21 @@ import com.nicolaspetras.ciphers.java.ciphers.exceptions.UnexpectedNonAlphaCharE
  * An implementation of the Caesar cipher, which uses a numerical key that determines the letter shift applied to the
  * plaintext and thus produced an piece of Caesar cipher cipher text.
  */
-public class Caesar extends Cipher
-{
+public class Caesar extends Cipher {
     // instance variables
     private int key;
 
     // constructors
-    public Caesar(int key) throws InvalidCipherKeyException
-    {
+    public Caesar(int key) throws InvalidCipherKeyException {
         setKey(key);
     }
 
     // getters/setters
-    public int getKey()
-    {
+    public int getKey() {
         return key;
     }
 
-    public void setKey(int key) throws InvalidCipherKeyException
-    {
+    public void setKey(int key) throws InvalidCipherKeyException {
         if ((key >= -25) && (key <= 25)) {
             this.key = key;
         } else {
@@ -53,21 +49,17 @@ public class Caesar extends Cipher
      */
     @Override
     public String encipher(String plaintext) throws UnexpectedNonAlphaCharException,
-            InvalidAsciiValForAException
-    {
+            InvalidAsciiValForAException {
         int p_len = plaintext.length();
         StringBuilder c = new StringBuilder(p_len);   // ciphertext
 
-        for (int i = 0; i < p_len; i++)
-        {
+        for (int i = 0; i < p_len; i++) {
             char curr = plaintext.charAt(i);
 
             // only encipher letters (alphabetical characters)
-            if (Character.isLetter(curr))
-            {
+            if (Character.isLetter(curr)) {
                 encipherChar(c, curr, (int) curr);
-            } else
-            {
+            } else {
                 c.append(plaintext.charAt(i));
             }
         }
@@ -84,18 +76,14 @@ public class Caesar extends Cipher
      * @param asciiVal   The ASCII value of the character currently being considered
      */
     private void encipherChar(StringBuilder ciphertext, char curr, int asciiVal) throws UnexpectedNonAlphaCharException,
-            InvalidAsciiValForAException
-    {
+            InvalidAsciiValForAException {
         char encipheredAsciiVal;
 
-        if (Character.isUpperCase(curr))
-        {
+        if (Character.isUpperCase(curr)) {
             encipheredAsciiVal = applyCipher(asciiVal, UPPERCASE_A);
-        } else if (Character.isLowerCase(curr))
-        {
+        } else if (Character.isLowerCase(curr)) {
             encipheredAsciiVal = applyCipher(asciiVal, LOWERCASE_A);
-        } else
-        {
+        } else {
             throw new UnexpectedNonAlphaCharException();
         }
         ciphertext.append(encipheredAsciiVal);
@@ -111,20 +99,17 @@ public class Caesar extends Cipher
      * @param asciiValOfA The ASCII value of a to be used - uppercase (65) or lowercase (97)
      * @return The enciphered character
      */
-    private char applyCipher(int asciiVal, int asciiValOfA) throws InvalidAsciiValForAException
-    {
+    private char applyCipher(int asciiVal, int asciiValOfA) throws InvalidAsciiValForAException {
         int encipheredAsciiVal;  // enciphered ASCII value of 'asciiVal'
 
-        if (asciiValOfA == 65 ^ asciiValOfA == 97)
-        {
+        if (asciiValOfA == 65 ^ asciiValOfA == 97) {
             // turn plaintext character to an alphabetic index (with A = 0, Z = 25), 65 = ASCII code for 'A', and 97 = 'a'
             int alphaIndex = asciiVal - asciiValOfA;
             // applies letter shift, accounting for overflow
             int encipheredAlphaIndex = Math.floorMod(alphaIndex + key, NUM_OF_LETTERS_IN_ALPHABET);
             // convert enciphered plaintext alphabetical index back to the ASCII character that index represents
             encipheredAsciiVal = encipheredAlphaIndex + asciiValOfA;
-        } else
-        {
+        } else {
             throw new InvalidAsciiValForAException();
         }
 

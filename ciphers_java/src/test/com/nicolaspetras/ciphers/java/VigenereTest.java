@@ -13,8 +13,7 @@ import org.junit.jupiter.params.provider.CsvSource;
  *
  * @see Vigenere
  */
-public class VigenereTest
-{
+public class VigenereTest {
 
     @ParameterizedTest
     @CsvSource({
@@ -23,8 +22,7 @@ public class VigenereTest
             "HELLOSOS, Oiwwc Ocjsh! 123&*%"
     })
     public void testEncipher(String key, String expected) throws UnexpectedNonAlphaCharException,
-            InvalidAsciiValForAException, InvalidCipherKeyException
-    {
+            InvalidAsciiValForAException, InvalidCipherKeyException {
         Vigenere vigenere = new Vigenere(key);
         String plaintext = "Hello World! 123&*%";
         String actual = vigenere.encipher(plaintext);
