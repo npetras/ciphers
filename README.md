@@ -1,4 +1,5 @@
 # ciphers
+## Motivation
 During this project I have created two programs, one in C and another in Java, to encipher plain text into cipher text,
  using two ciphers caesar and vigenere. First I developed the C program, with a CLI,
  but then decided to also implement a Java version, with a JavaFX GUI, which in currently in progress. This was because
@@ -11,6 +12,7 @@ This project has let me explore the different approaches that you take when usin
  with C being a functional language, and Java on the other hand is a object oriented language. I have tried to use each 
  language's strengths and general style when developing the two programs.
 
+## Future Plans
 Future plans for the project:
 * Add unit tests to the C program
 * Complete the development of the Java program, including the JavaFX GUI
